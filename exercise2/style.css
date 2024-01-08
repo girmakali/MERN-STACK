@@ -1,0 +1,11 @@
+body{
+  margin: 100px;
+  background-color: rgb(11, 11, 41);
+}
+#div{
+  background-color: rgb(34, 237, 237);
+  width: 300px;
+  height: 100px;
+  padding: 15px;
+  border-radius: 5px;
+}

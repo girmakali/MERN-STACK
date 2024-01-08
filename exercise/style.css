@@ -1,0 +1,36 @@
+*{
+  padding: 0;
+  margin: 0;
+}
+body{
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+.container{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-top: 100px;
+}
+form{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 10px;
+}
+button{
+  display: flex;
+  justify-content: center;
+  width: 50px;
+  margin-left: 220px;
+  margin-top: 10px;
+}
+#result{
+  margin-left: 170px;
+  margin-top: 5px;
+  font-weight: bold;
+  color: rgb(16, 29, 29);
+  font-size: x-large;
+}
