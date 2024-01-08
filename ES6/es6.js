@@ -60,6 +60,26 @@ function Circle(radius){
 const circle = new Circle(1);
 console.log(circle)
 
+// getters and setters
+const animal = {
+  firstName: 'mosh',
+  lastName:'hamedani',
+  get fullName(){
+    return `${animal.firstName} ${animal.lastName}`;
+  },
+  set fullName(value){
+    const parts = value.split(' ')
+    this.firstName = parts[0];
+    this.lastName = parts[1]
+  }
+}
+animal.fullName = 'girma moges'
+console.log(animal);
+//getter => access propersties
+//setter => change them
+console.log(animal.fullName)
+
+
 
 
 
