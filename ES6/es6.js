@@ -29,7 +29,7 @@ const wal = human.walk.bind(human);
 walk()
 wal()
 
-//factory function uses for assigning arrays with symillar methods easily 
+//factory function uses for assigning objects with symillar methods easily 
 function createCircle(radius){
   return{
     radius,
@@ -50,7 +50,15 @@ const circle2 =createCircle(3)
 console.log(circle2)
 circle2.area()
 
-
+// constructor function -- new returns all this methods
+function Circle(radius){
+  this.radius = radius;
+  this.draw = function(){
+    console.log('draw')
+  }
+}
+const circle = new Circle(1);
+console.log(circle)
 
 
 
