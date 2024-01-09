@@ -22,10 +22,10 @@ form{
 }
 button{
   display: flex;
+  flex-direction: column;
   justify-content: center;
+  align-items: center;
   width: 50px;
-  margin-left: 220px;
-  margin-top: 10px;
 }
 #result{
   margin-left: 170px;
