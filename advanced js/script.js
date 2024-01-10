@@ -42,19 +42,20 @@ let mg = multiply(10)
 console.log(mg(4))
 
 //compose function it like f of x = substruct5(multiply3(add2()))
+// function add2(x) {
+//   return x + 2;
+// }
+// function multiply3(x) {
+//   return x * 3;
+// }
+// function subtract5(x) {
+//   return x - 5;
+// }
+// const combinedFunction = compose(subtract5, multiply3, add2);
+// const result = combinedFunction(10);
+// console.log(result); // Output: 31
 
-function add2(x) {
-  return x + 2;
-}
-function multiply3(x) {
-  return x * 3;
-}
-function subtract5(x) {
-  return x - 5;
-}
-const combinedFunction = compose(subtract5, multiply3, add2);
-const result = combinedFunction(10);
-console.log(result); // Output: 31
+
 
 
 
