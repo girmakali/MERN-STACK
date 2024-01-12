@@ -1,0 +1,79 @@
+ javaScript
+        - single threaded and asynchronus language
+
+         memory heap and stack
+
+         Datatypes:
+               number
+               string
+               boolean
+               undefined
+               null
+               object
+               symbol
+               bigint
+
+         Arithimetic and logical operators
+                arith. op:    +, -, *, /, % , = (assignment operator)
+                logical op:  or(||), and(&&), not(!) 
+                comparision op:  >, <, >=, <=, !=, ==, ===
+
+         variables:
+               var - key word
+               let   (ES6)
+               const (ES6)
+
+     naming convension
+     -----------------
+               1. variable name must start only with letters or underscore(_)
+               2. reserved words are not allowed as var names
+               3. use PascalCasing, camelCasing and snake_casing
+
+      functions: 
+      ---------
+        function declaration + definition + function call
+
+      syntax:
+           function name(param) {
+                         return;             //function definition
+                    }
+
+                    name(arg);              //function calling
+                           
+
+            function expression:
+                   const mosh = function(param){
+                        return ;
+                   };
+
+                   mosh(args);
+
+    conditionals
+    ------------
+
+    if
+    if else
+    if elseif
+    switch
+    ternary operators                
+
+
+    Data structure 
+    --------------
+       Array
+       objects
+
+
+     Loops
+     -----
+       for 
+       while
+       do
+
+
+
+     DOM
+     --- 
+
+       selectors
+       event listners 

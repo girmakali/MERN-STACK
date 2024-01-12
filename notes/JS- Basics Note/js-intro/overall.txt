@@ -1,0 +1,102 @@
+
+
+    javascript
+    ---------
+
+       datatypes
+        -------
+         number
+         string
+         boolean
+         undefined
+         null
+         object (datatype + data structure)
+         bigint
+         symbol
+
+
+        Arithimetic :
+        logical : or (||), and (&&), not (!)
+        comparision :  == oposite to !=
+                       ===,  >>      !==
+                        >, <, >=, <=, ,  
+       
+          
+        conditionals (control flows)
+          if 
+          if else
+          if else if
+          switch: 
+             keywords(reserved words): switch, case, break, default
+          ternary operation (ES5)
+             syntax: condition ? true : false ;
+
+
+      variable
+      --------
+
+      var (default): function scoped, modified
+      let  (ES 6): block scoped, modified
+      const (ES 6): block scoped, unmidified
+
+      function
+      --------
+       function fname(param){
+        code
+        return;                   function declaration
+       }
+
+       fname(arg);                       calling /invoking
+
+
+
+
+       * () => {}    short hand rep of functions
+
+
+       Datastructures
+       --------------
+
+       Array: 
+         syntax: const a = ['nati', 'girma', 'adoniyas'];
+          access:  a[2];
+
+       object:
+         syntax: 
+
+         const profession = {
+             fullstack: 'nati',
+             backend: 'girma',
+             frontend: 'adoniyas'
+         }
+        
+        access: profession.frontend;
+                profession['frontend'];
+
+LOOPs
+-----
+
+for
+while
+do
+forEach
+* advanced class
+     for in
+     for of         
+
+
+
+
+
+     DOM
+     ---
+
+     Selectors
+     ---------
+         * getElementByTagName
+         * getelementbyclass
+         * getelementbyid
+
+         *querySelector
+         *querySelectorAll
+         

@@ -1,0 +1,526 @@
+
+
+
+EchmaScript (ES) : standard of the js language syntax ,semantics and Behaviour of js language
+----------------
+
+
+ES6 
+
+1. Scope ( let and const )
+
+   eg. const obj = {
+             player: 'pk',
+             experiance: 100,
+             level: false
+               }   
+ 
+    NB. we can't reassign obj, but we can update the property values
+                                        eg. obj.level = true;
+
+
+
+    Destructuring
+    *************
+
+  - Destructuring in JavaScript provides a concise and readable way to extract values from objects or arrays, 
+    making your code more expressive and easier to manage.
+
+   * usual way(normal)                   * Destructured(ES6)
+    ------------------                     -----------------
+  const player = obj.player;              const {player, experiance} = obj;
+  const experiance = obj.experiance;  
+  let level = obj.level;                  let {level} = obj;
+
+        where to use: 
+                        - object                         (eg. const {player, experiance} = obj;  )
+                        - Arrays                         (eg. const [list1, list2] = list;   )
+                        - obj as functions parameters    (eg. function greet({player, experiance}) {console.log(')}
+
+
+
+   object properties 
+   *****************
+   - dynamic property values
+
+   eg. const name = 'john';
+        const obj = {
+            [name]:'hello';
+        }
+
+   eg2.      
+        const a = 'Abebe';
+        const b = 'Ahmed';
+        const c = {};
+
+        const obj = {       equals (ES6) =>    const obj ={a,b,c}
+            a: a,
+            b: b,
+            c: c
+        }
+
+
+  Template Strings
+  ****************
+
+  const name = 'akrem';
+  const passion = 'software developer';
+  const country = 'ethiopia';
+  const rank = 100;
+
+  const resume = `am ${name} and i am ${passion}living in ${country} which is ranked ${rank%10}th of the whole ethiopian programmers `      
+
+
+  Default Arguments
+  *****************
+  if we want to add some default values for the above eg. we should use a function
+
+  function resume(name = "", passion = 'engineer', country ='africa', rank ='unknown'){
+    return `am ${name} and i am ${passion} living in ${country} which is ranked ${rank%10}th of the whole etiopian programmers `
+  }
+
+
+
+
+
+
+
+
+
+  Arrow Functions
+  ***************
+  short hand representation of a function
+
+  syntax: 
+    method 1:                            
+             function add(a,b){
+                 return a+b;        
+                    }
+
+    method 2:
+            const add = function(a,b){
+                            return a+b;
+                               }
+
+    method 3:
+           ES6 ...   const add = (a,b) => a+b;
+
+
+
+
+
+
+  Advanced Functions
+  ******************
+
+   Closure         eg.const outerFunction = () => {
+                         const outerVariable = 'I am from the outer function';
+
+                         const innerFunction = () => {
+                               console.log(outerVariable);
+                                      };
+
+                        return innerFunction;
+                      };
+
+                      const closureFunc = outerFunction();
+                      closureFunc(); // Output: "I am from the outer function"        //child scope remember what's inside parent
+
+
+   Currying         eg. function multiply(a) {
+                            return function(b) {
+                                            return a * b;
+                                         };
+                                  }                                           ... change this into An Arrow function
+
+                          const multiplyByTwo = multiply(2);
+                          console.log(multiplyByTwo(4)); // Output: 8
+
+
+   Compose
+                
+
+
+
+
+
+
+
+
+  Advanced Arrays
+  ***************
+
+             Advanced Array  methods:
+             ***********************
+
+
+  N.B infinite loop: non stoppable loop 
+
+
+  forEach 
+          eg. const array = [1, 4, 10, 17];
+              const newArray = [];
+              array.forEach(n => newArray.push(n*2); );
+              console.log(newArray);   // [2, 8, 20, 34]
+
+
+  map  
+
+          eg. const array = [1, 4, 10, 17];
+              const mapArray = array.map( n =>{return n*2;});           / array.map(n => n*2);
+              cosole.log(mapArray);   // [2, 8, 20, 34]
+
+
+  filter
+           eg. const array = [1, 4, 10, 17];
+               const filterArray = array.filter((n) => {return n > 5});  / ...array.filter(n => n>5)
+               console.log(fileterArray);  // [10, 17]
+
+
+  reduce: we can do filtering and mapping using reduce
+
+          eg. const array = [1, 4, 10, 17];
+              const reduceArray = array.reduce(
+                                 (accumulator, n) => {return accumulator + n}
+                                  , 5);            // the second syntax must be the initial value of the acc
+             console.log(reduceArray);
+
+
+
+
+
+
+
+
+
+
+
+  Advanced Objects
+  ****************
+
+  Reference type
+  --------------
+                primitive types Vs reference types
+                ----------------------------------
+         primitive types : number, string, boolian, undefined  (known by ES and js => immutable)
+         reference types : objects ( including arrays ), due every object refer to different value
+                            (known by the programmer)
+   eg. var object1 = {value: 10};
+       var object2 = object1;
+       var object3 = {value: 10};
+
+       console.log (object1 === object 3); //false
+
+
+  context
+  ------
+              context Vs scope
+              ----------------
+
+   scope: defined with in '{}' 
+
+   context: using of 'this' keyword, this: refers to what obj it's inside of
+
+        eg. console.log(this); -> the same as: console.log(window);   //output: {windows object ... }
+        eg2. function a() {
+                   console.log(this);  
+                } 
+                  a();        // { windows obj ...}  - because it's the same as windows.a();
+                         N.B check what could come before the dot (.) to see to what 'this' refers to
+        eg3. const obj = {
+                   a: function(){
+                        console.log(this);
+                     }
+                }
+                  obj.a();          // {a: f}  - check befor the dot there is 'obj' object not 'windows'
+                                                 object context
+
+  instantiation 
+  -------------
+     - making instances or multiple copies of an object
+
+   class Player {
+        constructor(name, type){
+             this.name = name;
+             this.type = type;
+        }
+
+       introduction(name, type){
+               console.log(`this is ${this.name} playing a ${this.type} of game`);
+           }
+    }
+
+  class Wizard extends Player{
+          constructor(name, type){
+              super(name,type); 
+            }
+
+         play(name, type) {
+              console.log(`${this.name}, you can start the game by pressing ${this.type}`);
+             }
+       }
+
+  const wizard1 = new Wizard('ahmed', 'main actor'); 
+
+
+
+
+
+
+   Pass by value and Pass by reference
+   -----------------------------------
+
+  pass by value: primitive types
+              - make a copy a value and create that value somewhere else 
+               in the memory location
+              - cause more space and memory storage
+  pass by reference: reference types
+               - not copying the value, it's just allocating the memory 
+                  location of the value
+         prons - by having one reference type (eg. object, arrays), we can save
+                  space and memory. 
+         cons  - have to be careful while changing a property value by one 
+                 of the referenced types(objects)
+
+                 eg1. 
+                    let obj = {a: 'a', b:'b', c:'c'}
+                    let obj2 = obj;
+                    obj.c = 'helo';
+                        console.log(obj);   // {a: 'a', b:'b', c:'helo'}
+                        console.log(obj2);  // {a: 'a', b:'b', c:'helo'}
+
+                eg2. var c = [1, 2, 3, 4, 5];       // array is also an object
+                    var d = c;
+                    d.push(10);
+                    console.log(c); // [1,2,3,4,5,10]
+                    console.log(d); // [1,2,3,4,5,10]
+                     
+   N.B There is also time to clone/ copy an object (cases where we won't modify references)
+                   
+            * for an array, one of the ways of doing it is accoring to the previous example
+                          var c = [1, 2, 3, 4, 5];
+                          var d = [].concat(c);
+                          d.push(10);
+                              console.log(c); // [1, 2, 3, 4, 5]
+                              console.log(d); //  [1, 2, 3, 4, 5, 10]
+
+            * for an object, according to the previous example:
+                    let obj = {a: 'a', b:'b', c: 'c'}
+                    let obj2 = Object.assign({}, obj);   // or: 
+                    let obj3 = {...obj}   
+                     obj.c = 'helo';
+                     console.log(obj);     //   {a: 'a', b:'b', c: 'helo'}    
+                     console.log(obj2);    //   {a: 'a', b:'b', c: 'c'  }    cloned to different memory location
+                     console.log(obj3);    //   {a: 'a', b:'b', c: 'c' } 
+
+   N.B what if there is an object inside and object 
+                  eg. let obj = {a:'a', b:'b', c:{deep:'original'}}
+                      let obj2 = Object.assign({}, obj);   // or: 
+                      let obj3 = {...obj}   
+                     obj.c.value = 'helo';
+                     console.log(obj);     //   {a: 'a', b:'b', c: {deep: 'helo'}}    
+                     console.log(obj2);    //   {a: 'a', b:'b', c: {deep: 'helo'}}  
+                     console.log(obj3);    //   {a: 'a', b:'b', c: {deep: 'helo'}}
+              # this is called shallow clonning , just cloning the outer object not deeper
+
+       to deep cloning, we use JSON
+            
+                 let deepClone = JSON.parse(JSON.stringify(obj));
+                  console.log(deepClone);   // {a: 'a', b: 'b', c: {deep: 'original'}}
+
+	
+
+
+  ES7:  - .includes() 
+      - square of a number (**n) means nth power 
+ 
+  ES8:- .padStart(), .padEnd()
+      - trailing commas in function's parameter list and calls
+      - Object.keys (allow us to do in objects same work as arrays, eg. mapping , filtring)
+      - Object.values 
+      - Object.entries
+      - Async await 
+
+
+    Realtime scenario (object.entries)
+    -----------------
+    - Object.entries(obj) : converts the obj object into an array of key-value pairs
+       Assume an object was sent with some server from a database, if we want to give them a custom username :-
+        let obj = {
+          username0: 'akrem',              after Object.entries(obj)         [[username0,'akrem'], [username1, 'raniya'],] 
+          username1: 'raniya',            ------------------------->          
+          username2: 'amir', 
+          username3: 'sadat'
+          }
+
+     Object.entries(obj).map(value => {
+             return value[1]+ value[0].replace('username', '');
+         })
+
+
+
+    cont..
+   - Async await (will be discussed later)
+
+ES10:
+    - flat()
+    - flatMap()
+    - trimStart()
+    - trimEnd()
+    - fromEntries() :- opposite of 'Object.entries()' (from ES8)
+    - update to try catch syntax, which the error parameter is not a must
+
+
+          eg. try () {
+                       }
+              catch(error) {        // error is not mandatory in ES10
+                        console.log('incorrect statment' + error)
+                       }
+
+
+
+Advanced Loop
+-------------
+    const basket = [orange, banana, grapes];
+
+    const detailedBasket = {
+                 orange: 1,
+                 banana: 2, 
+                 grapes: 4
+            }
+
+for of:
+------
+   iterating (arrays, strings)
+   for (items of basket){ console.log(items);}  
+for in:
+------
+   enumerating (objects, arrays)
+   for (items in detailedBasket) { console.log(items); }
+
+
+
+
+ES2020
+------
+
+ - BigInt
+ - optional chaining operator (?.)
+
+
+      eg. let food = { 
+                        vegitable: {
+                              spicy: "pepper",
+                              green: "salad",
+                              sauce: " "
+                                   }
+                        }
+
+         // to check if green is there or not we can use (with no error msg, and no using of 'if' conditionals.
+         let present = food?.vegitable?.green;
+           console.log(present);   // salad
+ 
+- Nullish colescing operator (??)
+            * Providing Default Values
+            * Default Function Parameters
+
+         let present = food?.vegitable?.sauce ?? "no sauce";    // if it is an empty string or null (check by changing to || )
+           console.log(present);
+  
+
+
+
+Module:
+------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+PHP : BACKNED 
+    xampp, wampp
+db: mysql, postgress (relational) 
+
+
+
+python: django
+
+
+
+
+
+MERN : 
+-----
+ js :
+-----
+
+stack
+
+  M- mongoDB   - NON RELATIONAL (NOT A TABLE)
+  R- react     - front end
+  N- node      - back end
+  E- express.js   
+  
+
+
+
+
+
+
+
+
+
+
+MEAN: angular
+
+MEVN: vue
+
+   
+react: meta(facebook)
+anglar : GOOGLE
+vue : front end
+
+
+
+
+
+
+
+
+
+
+
+
+
