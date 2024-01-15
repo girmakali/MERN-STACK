@@ -4,3 +4,37 @@
   border-radius: 20px;
   border: none;
 }
+.images{
+  width: 40px;
+  background-color:rgb(222, 217, 217) ;
+  border-radius: 20px;
+}
+#main{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items:center;
+  padding: 20px;
+}
+header{
+ display: flex;
+ justify-content: space-between;
+ width: 400px;
+}
+ul{
+  display: flex;
+  list-style-type: none;
+  justify-content:space-evenly;
+  width: 200px;
+}
+.NavList{
+  margin-right: 5px;
+  font-size: 1.2rem;
+}
+.NavBar{
+  box-shadow: inset;
+  
+}
+footer{
+  background-color: grey;
+}

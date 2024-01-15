@@ -1,0 +1,69 @@
+- Slow development
+- hard to scale while in complex projects (hard to manage with team of developers)
+
+React: 
+     - Built by Facebook (FB, Instagram & Netflix)
+     - can be used in mobile devices (native) and VR
+     
+
+     N.B
+         - Components                : to write reusable, modular,and better organized code
+         - one way Data flow
+         - Virtual Dom
+         - Eco-System (many tools works with React)
+
+
+   prerequisites: Set Up development Environment
+
+           - Node.js and npm:               - https://nodejs.org
+           - Text Editor or IDE:            - vscode, atom, webstorm
+           - Command Line Interface (CLI)   - terminal
+           - Creating A React App
+                   1- Create-React-App(CRA) - package contain webpack,babel(bablejs.io/repl) and others ready made config installed
+                   2- Vite 
+
+                1. CRA 
+               - npm install -g create-react-app (add 'sudo' at begining if there is an error)
+               - create-react-app my-project     ( to create a project named my-project)
+                N.B this above is outdated CRA
+
+                2. CRA 2        upgraded version of CRA 
+                  - just update the version in package.json file and run 'npm install' in the terminal   
+
+                3. Latest version of CRA
+                 - npx create-react-app my-project              (npx: package runner tool comes with npm 5.2+)
+                 - cd my-project
+                 -npm start
+               
+               
+
+
+               folder structure
+                ----------------
+
+                  my-app/
+                     README.md
+                     node_modules/
+                     package.json
+                     public/
+                        index.html         ...page template
+                        favicon.ico
+                     src/                  .. place for sub directories + CSS + Js files (Only Place where files R processed by WEBPACK)
+                        App.css
+                        App.js
+                        App.test.js
+                        index.css
+                        index.js          ... js entry point
+                        logo.svg
+
+
+
+
+
+
+
+
+
+
+
+
