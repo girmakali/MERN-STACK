@@ -6,15 +6,8 @@ import "./List.css";
 export function List() {
   return (
     <div className="robot">
-      {database.map((element) => {
-        return (
-          <Card
-            key={element.id}
-            id={element.id}
-            name={element.name}
-            title={element.title}
-          />
-        );
+      {database.map((list) => {
+        return <Card name={list.name} title={list.title} id={list.id} />;
       })}
     </div>
   );
