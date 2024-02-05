@@ -6,5 +6,8 @@ export const database = [
   {id: 4 , name:'adonay' , title:"the function of the robot is to pick dustbins"},
   {id: 90 , name:'adonay' , title:"the function of the robot is to pick dustbins"}
   ,
-  {id: 90 , name:'xxxxx' , title:"the function of the robot is to pick dustbins"}
+  {id: 90 , name:'xxxxx' , title:"the function of the robot is to pick dustbins"},
+  {id: 550 , name:'adonay' , title:"the function of the robot is to pick dustbins"}
+  ,
+  {id: 40 , name:'omishtu' , title:"the function of the robot is to pick dustbins"}
 ]
