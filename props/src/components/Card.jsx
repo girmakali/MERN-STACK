@@ -6,7 +6,7 @@ export function Card({ name, title, id }) {
   let [like, setlike] = useState(0);
 
   const increase = () => {
-    setlike((like = like + 2));
+    setlike((like = 1));
   };
   return (
     <>
